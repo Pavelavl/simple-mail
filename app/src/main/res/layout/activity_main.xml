@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Почта"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
+    <!-- Список писем -->
+    <ListView
+        android:id="@+id/listViewEmails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingBottom="16dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <!-- Кнопка для получения писем -->
+    <Button
+        android:id="@+id/btnGetEmails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Получить письма"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+    <!-- Поле для отображения содержимого письма с прокруткой -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/txtMessageContainer"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:gravity="start"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+    </ScrollView>
+
+    <!-- Кнопка назад -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Назад"
+        android:visibility="gone"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="8dp" />
+
+    <!-- Поля для отправки письма -->
+    <EditText
+        android:id="@+id/edtFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="От кого"
+        android:inputType="textEmailAddress"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edtTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Кому"
+        android:inputType="textEmailAddress"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edtSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Тема"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/edtBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Текст письма"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:gravity="top"
+        android:padding="8dp" />
+
+    <!-- Кнопка для отправки письма -->
+    <Button
+        android:id="@+id/btnSendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Отправить письмо"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
